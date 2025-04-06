@@ -1,0 +1,322 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: url('images/farm-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 128, 0, 0.8);
+    padding: 10px 20px;
+    color: white;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.navbar h1 {
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+
+/* New Styles for Logo and Title */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.title-container h1 {
+    font-size: 24px;
+    color: white;
+    margin: 0;
+}
+
+.title-container h4 {
+    font-size: 14px;
+    color: #ffd700; /* Gold color for contrast */
+    margin: 0;
+    font-weight: normal;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    padding: 50px 20px;
+    background: rgba(255, 255, 255, 0.7);
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.hero-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    color: #006400;
+}
+
+.hero-image {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Buttons */
+.buttons {
+    text-align: center;
+    padding: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #006400;
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background: #004d00;
+}
+
+/* Vegetable Buttons */
+.vegetable-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.vegetable-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    transition: transform 0.2s;
+}
+
+.vegetable-btn img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.vegetable-btn span {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.vegetable-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Feedback Section */
+.feedback {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.feedback h2 {
+    color: #006400;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.review {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+/* Content Section */
+.content {
+    background: rgba(255, 255, 255, 0.9);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+.content h1 {
+    color: #006400;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input, select, button {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background: #006400;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #004d00;
+}
+
+/* Product List */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.product {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.order-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Contact & Footer */
+.contact {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    margin: 20px;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 128, 0, 0.8);
+    color: white;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-image {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .product {
+        width: 100%;
+    }
+    .vegetable-btn img {
+        width: 80px;
+        height: 80px;
+    }
+    .review {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-pic {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
