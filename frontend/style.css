@@ -139,6 +139,7 @@ body {
     gap: 20px;
     justify-content: center;
     padding: 20px;
+    width: 100%; /* Ensure it takes full width */
 }
 
 .vegetable-btn {
@@ -150,6 +151,7 @@ body {
     cursor: pointer;
     color: #333;
     transition: transform 0.2s;
+    flex: 0 0 auto; /* Prevent buttons from stretching */
 }
 
 .vegetable-btn img {
@@ -199,6 +201,10 @@ body {
     margin-right: 15px;
 }
 
+.feedback-button {
+    text-align: center;
+}
+
 /* Content Section */
 .content {
     background: rgba(255, 255, 255, 0.9);
@@ -222,18 +228,84 @@ form {
     margin: 0 auto;
 }
 
-input, select, button {
-    padding: 10px;
-    margin: 10px 0;
+.upload-product-form {
+    max-width: none; /* Remove max-width constraint for the entire form */
+    width: 100%; /* Take full width of the parent */
+}
+
+.upload-product-form h2 {
+    text-align: center; /* Center the heading */
+}
+
+.upload-product-form .form-inputs {
+    max-width: 400px; /* Keep inputs centered with max-width */
+    margin: 0 auto; /* Center the inputs */
+}
+
+.upload-product-form .form-inputs button {
+    display: block;
+    margin: 20px auto; /* Center the button */
+    width: 200px; /* Fixed width for better appearance */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #006400;
+    margin-bottom: 5px;
+}
+
+input, select {
+    padding: 12px;
     border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    margin-bottom: 15px; /* Ensure consistent gap between form elements */
+}
+
+input:focus, select:focus {
+    border-color: #006400;
+    box-shadow: 0 0 8px rgba(0, 100, 0, 0.2);
+    outline: none;
+}
+
+.price-group .price-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.price-container input {
+    flex: 1;
+}
+
+.price-container span {
+    font-size: 16px;
+    color: #333;
+    padding: 12px;
+    background: #f5f5f5;
     border-radius: 5px;
 }
 
 button {
+    padding: 12px;
     background: #006400;
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s;
 }
 
 button:hover {
@@ -318,5 +390,13 @@ footer {
     .profile-pic {
         margin-right: 0;
         margin-bottom: 10px;
+    }
+    .price-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .price-container span {
+        margin-top: 10px;
+        text-align: center;
     }
 }
