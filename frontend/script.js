@@ -174,6 +174,70 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Auto-fill vegetable name in upload_product.html
+    if (document.getElementById('productForm')) {
+        vegetableButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent form submission
+                const vegetableType = button.getAttribute('data-vegetable');
+                document.getElementById('vegetableName').value = vegetableType;
+            });
+        });
+    }
+
+    // Real-time price display with ₹ and /kg
+    const priceInput = document.getElementById('pricePerKg');
+    const priceDisplay = document.getElementById('priceDisplay');
+    if (priceInput && priceDisplay) {
+        priceInput.addEventListener('input', () => {
+            const price = priceInput.value;
+            priceDisplay.textContent = price ? `₹${price}/kg` : `₹0/kg`;
+        });
+    }
+
+    // Enforce +91 prefix for contact number
+    function enforcePhonePrefix(input) {
+        const prefix = '+91';
+        // Get the current value without the prefix
+        let value = input.value.startsWith(prefix) ? input.value.slice(prefix.length) : input.value;
+        // Remove any non-numeric characters from the number part
+        value = value.replace(/[^0-9]/g, '');
+        // Limit to 10 digits
+        value = value.slice(0, 10);
+        // Always set the value with the prefix
+        input.value = prefix + value;
+    }
+
+    const contactInput = document.getElementById('contactNumber');
+    if (contactInput) {
+        // Set the initial value to +91
+        contactInput.value = '+91';
+        contactInput.addEventListener('input', () => enforcePhonePrefix(contactInput));
+
+        // Prevent deleting the prefix
+        contactInput.addEventListener('keydown', (e) => {
+            const cursorPosition = contactInput.selectionStart;
+            const value = contactInput.value;
+
+            // Prevent backspace from deleting the prefix
+            if (e.key === 'Backspace' && cursorPosition <= 3) {
+                e.preventDefault();
+            }
+
+            // Prevent cursor from moving before the prefix
+            if (cursorPosition <= 3 && (e.key === 'ArrowLeft' || e.key === 'Backspace')) {
+                contactInput.setSelectionRange(3, 3);
+            }
+        });
+
+        // Ensure cursor starts after the prefix
+        contactInput.addEventListener('click', () => {
+            if (contactInput.selectionStart < 3) {
+                contactInput.setSelectionRange(3, 3);
+            }
+        });
+    }
+
     // No default display on load
     // Removed: displayProducts('Tomato');
 });
