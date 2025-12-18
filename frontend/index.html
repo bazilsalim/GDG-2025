@@ -3,12 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration Form</title>
+
+
+    <script>
+function validateForm() {
+    const userid = document.getElementById("userid").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const name = document.getElementById("name").value.trim();
+    const country = document.getElementById("country").value;
+    const zip = document.getElementById("zip").value.trim();
+    const email = document.getElementById("email").value.trim();
+
+    const sex = document.querySelector('input[name="sex"]:checked');
+    const language = document.querySelectorAll('input[name="language"]:checked');
+
+    const nameRegex = /^[A-Za-z]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const numberRegex = /^[0-9]+$/;
+
+    // User ID
+    if (userid.length < 5 || userid.length > 12) {
+        alert("User ID is required and must be of length 5 to 12");
+        return false;
+    }
+
+    // Password
+    if (password.length < 7 || password.length > 12) {
+        alert("Password is required and must be of length 7 to 12");
+        return false;
+    }
+
+    // Name
+    if (!nameRegex.test(name)) {
+        alert("Name is required and must contain alphabets only");
+        return false;
+    }
+
+    // Country
+    if (country === "") {
+        alert("Please select a country");
+        return false;
+    }
+
+    // ZIP Code
+    if (!numberRegex.test(zip)) {
+        alert("ZIP code is required and must be numeric only");
+        return false;
+    }
+
+    // Email
+    if (!emailRegex.test(email)) {
+        alert("Email is required and must be a valid email");
+        return false;
+    }
+
+    // Sex
+    if (!sex) {
+        alert("Sex is required");
+        return false;
+    }
+
+    // Language
+    if (language.length === 0) {
+        alert("Language is required");
+        return false;
+    }
+
+    alert("Form submitted successfully");
+    return true;
+}
+</script>
 </head>
 <body>
 
 <h2>Registration Form</h2>
 
-<form>
+<form onsubmit="return validateForm()">
     <p>
         <label for="userid">User id:</label>
         <input type="text" id="userid" name="userid" placeholder="16286" required><br><br>
